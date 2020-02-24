@@ -5,11 +5,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Extensions" />
-      <Folder Include="Middleware" />
-      <Folder Include="ModelBinders" />
-      <Folder Include="Routing" />
-      <Folder Include="ViewServices" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
     </ItemGroup>
 
 </Project>

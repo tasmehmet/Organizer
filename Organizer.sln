@@ -28,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer.Crosscutting.IoC"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer.Crosscutting.Mail", "Organizer.Crosscutting.Mail\Organizer.Crosscutting.Mail.csproj", "{78787299-9802-48ED-89C3-AEE28D638027}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer.Data", "Organizer\Organizer.Data.csproj", "{ED30BB7E-977D-49CA-884F-E703B4BF8C14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer.Data", "Organizer.Data\Organizer.Data.csproj", "{ED30BB7E-977D-49CA-884F-E703B4BF8C14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer.Services", "Organizer.Services\Organizer.Services.csproj", "{666B0CBC-2AF8-4862-94A9-0E83346A71BA}"
 EndProject
