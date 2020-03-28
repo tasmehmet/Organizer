@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Organizer.Application.ViewModels;
+using Organizer.Domain.Models;
 
 namespace Organizer.Application.Automapper
 {
@@ -6,6 +8,8 @@ namespace Organizer.Application.Automapper
     {
         public ViewModelToDomainMappingProfile()
         {
+            CreateMap<CityViewModel,CityModel>();
+            CreateMap<CountiesViewModel,CountiesModel>();
         }
     }
 }

@@ -7,11 +7,16 @@
     <ItemGroup>
       <PackageReference Include="MediatR" Version="8.0.0" />
       <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+      <PackageReference Include="Scrutor" Version="3.2.0" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Organizer.Application\Organizer.Application.csproj" />
       <ProjectReference Include="..\Organizer.Crosscutting.Bus\Organizer.Crosscutting.Bus.csproj" />
+      <ProjectReference Include="..\Organizer.Data\Organizer.Data.csproj" />
+      <ProjectReference Include="..\Organizer.Domain.Core\Organizer.Domain.Core.csproj" />
     </ItemGroup>
 
 </Project>

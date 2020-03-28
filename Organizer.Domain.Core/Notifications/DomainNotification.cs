@@ -3,7 +3,7 @@ using Organizer.Domain.Core.Events;
 
 namespace Organizer.Domain.Core.Notifications
 {
-    public class DomainNotification 
+    public class DomainNotification : Event
     {
         public Guid DomainNotificationId { get; private set; }
         public string Key { get; private set; }

@@ -6,11 +6,6 @@
         <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     </PropertyGroup>
 
-
-    <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" />
-    </ItemGroup>
-
     <ItemGroup>
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
@@ -20,7 +15,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Organizer.Crosscutting.IoC\Organizer.Crosscutting.IoC.csproj" />
       <ProjectReference Include="..\Organizer.Data\Organizer.Data.csproj" />
+      <ProjectReference Include="..\Organizer.Domain.Core\Organizer.Domain.Core.csproj" />
+      <ProjectReference Include="..\Web.Core\Web.Core.csproj" />
     </ItemGroup>
 
 </Project>

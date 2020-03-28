@@ -17,10 +17,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Mappings" />
       <Folder Include="Models" />
-      <Folder Include="Repository" />
-      <Folder Include="UoW" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Organizer.Domain\Organizer.Domain.csproj" />
     </ItemGroup>
 
 </Project>
