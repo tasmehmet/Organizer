@@ -7,13 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.App" />
         <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Organizer.Crosscutting.IoC\Organizer.Crosscutting.IoC.csproj" />
       <ProjectReference Include="..\Organizer.Data\Organizer.Data.csproj" />
+      <ProjectReference Include="..\Web.Core\Web.Core.csproj" />
     </ItemGroup>
 
 </Project>

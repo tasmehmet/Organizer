@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,21 +11,20 @@ namespace Organizer.Data.Context
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        private readonly IHostingEnvironment _env;
+        public ApplicationDbContext(IHostingEnvironment env)
         {
+            _env = env;
         }
-
 
         public DbSet<CityModel> Cities { get; set; }
         public DbSet<CountiesModel> Counties { get; set; }
+
          protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CityModel>().ToTable("Cities","dbo");
-
-            modelBuilder.Entity<CmsEntity>().HasKey(p => new {p.ID, p.Lang});
-
-            modelBuilder.Entity<CountiesModel>().ToTable("Counties","dbo").HasKey(p => new {p.ID});
+            
+            modelBuilder.Entity<CountiesModel>().ToTable("Counties","dbo");
 
             #region Entity Mapping
 
@@ -37,5 +37,17 @@ namespace Organizer.Data.Context
 
             base.OnModelCreating(modelBuilder);
         }
+         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+         {
+             var config = new ConfigurationBuilder()
+                .SetBasePath(_env.ContentRootPath)
+                .AddJsonFile($"appsettings.json")
+                .AddJsonFile($"appsettings.{_env.EnvironmentName}.json", optional: true)
+                .Build();
+
+            optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+             optionsBuilder.EnableDetailedErrors();
+             optionsBuilder.EnableSensitiveDataLogging();
+         }
     }
 }

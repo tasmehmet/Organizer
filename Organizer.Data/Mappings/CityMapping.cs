@@ -8,7 +8,7 @@ namespace Organizer.Data.Mappings
     {
         public override void Configure(EntityTypeBuilder<CityModel> builder)
         {
-            builder.Property(p => p.CityName).HasColumnName("Name");
+            builder.Property(p => p.Name).HasColumnName("Name");
         }
     }
 }
